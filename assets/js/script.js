@@ -12,26 +12,27 @@ if (sidebarBtn) {
   sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
 }
 
-// page navigation variables
+// page navigation
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
-// add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
+navigationLinks.forEach((btn) => {
+  btn.addEventListener("click", function () {
+    const targetPage = this.getAttribute("data-nav-link");
 
-    const targetPage = this.getAttribute("data-nav-link") || this.innerHTML.toLowerCase().trim();
+    // prepni tlacidla
+    navigationLinks.forEach((link) => link.classList.remove("active"));
+    this.classList.add("active");
 
-    for (let j = 0; j < pages.length; j++) {
-      if (targetPage === pages[j].dataset.page) {
-        pages[j].classList.add("active");
-        navigationLinks[j].classList.add("active");
-        window.scrollTo(0, 0);
+    // prepni sekcie
+    pages.forEach((page) => {
+      if (page.getAttribute("data-page") === targetPage) {
+        page.classList.add("active");
       } else {
-        pages[j].classList.remove("active");
-        navigationLinks[j].classList.remove("active");
+        page.classList.remove("active");
       }
-    }
+    });
 
+    window.scrollTo(0, 0);
   });
-}
+});
