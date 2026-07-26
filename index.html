@@ -541,48 +541,113 @@
       <article class="3d-printing" data-page="3d-printing">
 
         <header>
+          <br><br>
           <h2 class="h2 article-title">3D Printing & Modeling</h2>
         </header>
 
-        <section class="about-text">
-          <p>
-            Functional CAD models, print optimizations, and physical creations.
-          </p>
+        <!-- VRCHNÝ RIADOK: HLAVNÝ PROJEKT + LINKY NA PROFILY -->
+        <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px;">
+
+          <!-- HLAVNÝ VEĽKÝ PROJEKT -->
+          <div style="background: var(--border-gradient-onyx); padding: 24px; border-radius: 16px; border: 1px solid var(--jet); display: flex; flex-direction: column;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+              <span style="color: var(--orange-yellow-crayola); font-size: 0.8rem; font-weight: 500;">Featured Project</span>
+              <span style="background: rgba(76, 175, 80, 0.15); color: #4caf50; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px;">Featured</span>
+            </div>
+
+            <h3 class="h3" style="color: var(--white-2); font-size: 1.2rem; margin-bottom: 8px;">Customizable Storage Box</h3>
+            
+            <p style="color: var(--light-gray-70); font-size: 0.88rem; line-height: 1.5; margin-bottom: 15px;">
+              Fully parametric 3D printable cross-stitch container designed in OpenSCAD. Allows users to customize dimensions, grid patterns, and wall thickness directly on MakerWorld.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px;">
+              <span style="background: var(--smoky-black); color: var(--light-gray); font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">OpenSCAD</span>
+              <span style="background: var(--smoky-black); color: var(--light-gray); font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Bambu Studio</span>
+              <span style="background: var(--smoky-black); color: var(--light-gray); font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Parametric</span>
+            </div>
+
+            <a href="https://makerworld.com" target="_blank" rel="noopener noreferrer" style="color: #ffffff; font-style: italic; text-decoration: underline; font-size: 0.88rem; margin-top: auto;">
+              View Model on MakerWorld &rarr;
+            </a>
+          </div>
+
+          <!-- PROFILY NA SITIACIH (MakerWorld, Printables...) -->
+          <div style="background: var(--border-gradient-onyx); padding: 24px; border-radius: 16px; border: 1px solid var(--jet); display: flex; flex-direction: column; justify-content: center;">
+            <h3 class="h3" style="color: var(--white-2); font-size: 1.1rem; margin-bottom: 8px;">Find My Models On</h3>
+            <p style="color: var(--light-gray-70); font-size: 0.85rem; margin-bottom: 20px;">
+              Check out all my 3D printable designs, print profiles, and community uploads across these platforms:
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <!-- MAKERWORLD -->
+              <a href="https://makerworld.com" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: space-between; background: var(--smoky-black); padding: 12px 16px; border-radius: 10px; border: 1px solid var(--jet); color: var(--white-2); text-decoration: none;">
+                <span style="font-weight: 500; font-size: 0.95rem;">MakerWorld</span>
+                <span style="color: var(--orange-yellow-crayola); font-size: 0.85rem;">@LayerLabs &rarr;</span>
+              </a>
+
+              <!-- PRINTABLES -->
+              <a href="https://www.printables.com" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: space-between; background: var(--smoky-black); padding: 12px 16px; border-radius: 10px; border: 1px solid var(--jet); color: var(--white-2); text-decoration: none;">
+                <span style="font-weight: 500; font-size: 0.95rem;">Printables</span>
+                <span style="color: var(--orange-yellow-crayola); font-size: 0.85rem;">Visit Profile &rarr;</span>
+              </a>
+
+              <!-- THINGIVERSE -->
+              <a href="https://www.thingiverse.com" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: space-between; background: var(--smoky-black); padding: 12px 16px; border-radius: 10px; border: 1px solid var(--jet); color: var(--white-2); text-decoration: none;">
+                <span style="font-weight: 500; font-size: 0.95rem;">Thingiverse</span>
+                <span style="color: var(--orange-yellow-crayola); font-size: 0.85rem;">Visit Profile &rarr;</span>
+              </a>
+            </div>
+          </div>
+
         </section>
 
-        <section class="skill">
+        <!-- FOTOGALÉRIA: MY OTHER WORK -->
+        <section>
+          <h3 class="h3" style="color: var(--white-2); font-size: 1.3rem; margin-bottom: 20px;">My Other Work</h3>
 
-          <h3 class="h3 skills-title">3D Skills</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px;">
 
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">3D Modelling</h5>
-                <data value="80">80%</data>
+            <!-- FOTO ITEM 1 -->
+            <a href="https://makerworld.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; background: var(--border-gradient-onyx); border-radius: 12px; overflow: hidden; border: 1px solid var(--jet); display: flex; flex-direction: column;">
+              <div style="width: 100%; height: 180px; overflow: hidden; background: #1e1e1e;">
+                <!-- Vymeň src za cestu k tvojej fotke -->
+                <img src="./assets/images/project-1.png" alt="Multi-material Benchy" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
+              <div style="padding: 12px 15px;">
+                <h4 style="color: var(--white-2); font-size: 0.95rem; font-weight: 500; margin: 0 0 4px 0;">Optimized AMS Benchy</h4>
+                <span style="color: var(--light-gray-70); font-size: 0.78rem;">MakerWorld Model</span>
               </div>
-            </li>
+            </a>
 
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">3D Printing</h5>
-                <data value="70">70%</data>
+            <!-- FOTO ITEM 2 -->
+            <a href="https://makerworld.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; background: var(--border-gradient-onyx); border-radius: 12px; overflow: hidden; border: 1px solid var(--jet); display: flex; flex-direction: column;">
+              <div style="width: 100%; height: 180px; overflow: hidden; background: #1e1e1e;">
+                <img src="./assets/images/project-2.png" alt="3D Printed Mech Component" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
+              <div style="padding: 12px 15px;">
+                <h4 style="color: var(--white-2); font-size: 0.95rem; font-weight: 500; margin: 0 0 4px 0;">Mechanical Gift Assembly</h4>
+                <span style="color: var(--light-gray-70); font-size: 0.78rem;">Printables Model</span>
               </div>
-            </li>
+            </a>
 
-          </ul>
+            <!-- FOTO ITEM 3 -->
+            <a href="https://makerworld.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; background: var(--border-gradient-onyx); border-radius: 12px; overflow: hidden; border: 1px solid var(--jet); display: flex; flex-direction: column;">
+              <div style="width: 100%; height: 180px; overflow: hidden; background: #1e1e1e;">
+                <img src="./assets/images/project-3.png" alt="Bionic Hand Enclosure" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div style="padding: 12px 15px;">
+                <h4 style="color: var(--white-2); font-size: 0.95rem; font-weight: 500; margin: 0 0 4px 0;">Robotic Servo Enclosure</h4>
+                <span style="color: var(--light-gray-70); font-size: 0.78rem;">Custom CAD</span>
+              </div>
+            </a>
 
+            <!-- AK CHCEŠ PRIDAŤ ĎALŠIU FOTKU, LEN SKOPÍRUJ CELÝ <a> BLOK VYŠŠIE -->
+
+          </div>
         </section>
 
       </article>
-
-
       <!--
         - #CONTACT
       -->
