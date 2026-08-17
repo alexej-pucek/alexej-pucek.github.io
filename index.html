@@ -144,6 +144,9 @@
       <button class="navbar-link" data-nav-link="3d-printing">3D Printing & Modeling</button>
     </li>
     <li class="navbar-item">
+            <button class="navbar-link" data-nav-link="blog">Blog</button>
+          </li>
+    <li class="navbar-item">
       <button class="navbar-link" data-nav-link="contact">Contact</button>
     </li>
   </ul>
@@ -735,6 +738,57 @@
         </section>
 
       </article>
+     
+      <!--
+        - #BLOG / POSTS
+      -->
+
+      <article class="blog" data-page="blog">
+
+        <header>
+          <br><br>
+          <h2 class="h2 article-title">Blog & Posts</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="project-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; list-style: none; padding: 0;">
+
+            <!-- PRÍSPEVOK 1 -->
+            <li class="project-item" style="background: var(--border-gradient-onyx); padding: 20px; border-radius: 16px; border: 1px solid var(--jet); display: flex; flex-direction: column; justify-content: space-between;">
+              <div style="display: flex; flex-direction: column; height: 100%;">
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                  <span style="color: var(--orange-yellow-crayola); font-size: 0.8rem; font-weight: 500;">Updates / Embedded</span>
+                  <span style="color: var(--light-gray-70); font-size: 0.75rem;">Aug 2026</span>
+                </div>
+
+                <h3 class="h3" style="color: var(--white-2); font-size: 1.1rem; margin-bottom: 8px;">Building a Bionic Robotic Hand</h3>
+                
+                <p style="color: var(--light-gray-70); font-size: 0.85rem; line-height: 1.5; margin-bottom: 15px;">
+                  A breakdown of how I designed and programmed the bionic hand using MediaPipe, Python, and ESP32 microcontrollers.
+                </p>
+
+                <div style="margin-top: auto; padding-top: 10px;">
+                  <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 15px;">
+                    <span style="background: var(--smoky-black); color: var(--light-gray); font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">ROS 2</span>
+                    <span style="background: var(--smoky-black); color: var(--light-gray); font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">C++</span>
+                  </div>
+
+                  <a href="#" style="color: #ffffff; font-style: italic; text-decoration: underline; font-size: 0.85rem; display: block;">
+                    Read Article &rarr;
+                  </a>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+      
       <!--
         - #CONTACT
       -->
@@ -742,6 +796,7 @@
       <article class="contact" data-page="contact">
 
         <header>
+          <br>
           <h2 class="h2 article-title">Contact</h2>
         </header>
 
