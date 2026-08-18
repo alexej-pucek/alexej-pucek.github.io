@@ -763,15 +763,15 @@
                   <span style="color: var(--light-gray-70); font-size: 0.75rem;">Archive</span>
                 </div>
 
-                <h3 class="h3" style="color: var(--white-2); font-size: 1.1rem; margin-bottom: 8px;">Robotics & Embedded Posts</h3>
+                <h3 class="h3" style="color: var(--white-2); font-size: 1.1rem; margin-bottom: 8px;">Autonomous Robotic Quadruped</h3>
                 
                 <p style="color: var(--light-gray-70); font-size: 0.85rem; line-height: 1.5; margin-bottom: 15px;">
-                  Kolekcia všetkých príspevkov a zápiskov o vývoji robotickej ruky a embedded projektoch.
+                  All Posts about the process of building a Quadruped Robot.
                 </p>
 
                 <div style="margin-top: auto; padding-top: 10px;">
                   <button onclick="document.getElementById('folder-modal').style.display='flex'" style="background: none; border: none; padding: 0; color: var(--orange-yellow-crayola); cursor: pointer; font-style: italic; font-size: 0.85rem; display: block;">
-                    Otvoriť zložku (2 články) &rarr;
+                    Open Section &rarr;
                   </button>
                 </div>
 
@@ -842,7 +842,7 @@
 
       </article>
 
-      <!-- MODAL PRE ZLOŽKU -->
+      <!-- MODAL PRE ZLOŽKU 
       <div id="folder-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; padding: 20px;">
         <div style="background: var(--eerie-black-2); border: 1px solid var(--jet); border-radius: 16px; width: 100%; max-width: 600px; max-height: 80vh; overflow-y: auto; padding: 25px; position: relative;">
           <button onclick="document.getElementById('folder-modal').style.display='none'" style="position: absolute; top: 15px; right: 20px; background: none; border: none; color: var(--white-2); font-size: 1.5rem; cursor: pointer;">&times;</button>
@@ -861,7 +861,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
 
       <!-- MODAL PRE INTERNÝ ČLÁNOK 1 -->
       <div id="post-modal-1" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; padding: 20px;">
@@ -869,14 +869,32 @@
           <button onclick="document.getElementById('post-modal-1').style.display='none'" style="position: absolute; top: 15px; right: 20px; background: none; border: none; color: var(--white-2); font-size: 1.5rem; cursor: pointer;">&times;</button>
           
           <span style="color: var(--orange-yellow-crayola); font-size: 0.8rem;">Aug 2026</span>
-          <h2 class="h2" style="color: var(--white-2); margin: 10px 0 20px 0;">My Experience with ESP32 & Servos</h2>
+          <h2 class="h2" style="color: var(--white-2); margin: 10px 0 20px 0;">The Plan Phase</h2>
           
           <div style="color: var(--light-gray); font-size: 0.95rem; line-height: 1.6;">
             <p style="margin-bottom: 15px;">
-              Tu napíšeš samotný text článku... Prístup k riadeniu servomotorov cez ESP32 vyžaduje samostatné napájanie, pretože interný regulator nezvládne prúdové špičky.
+             For a while now I have been thinking about this project. To me it is so cool to see robots move, particularly the quadrupeds. There are lots of DIY Quadruped Robots already online, but I want to make my own one completely from scratch, and with more advanced features. On most of the Quadrupeds, you have the 3D printed frame, some servos to move, and a distance sensor. This seems like a wasted opportunity, because this kind of robot can do so much more, so I wrote down all the things I want my robot to do.
+
+Lidar room mapping, remembering terrain, autonomous exploration
+
+Camera Detection, detection of things, remembering their location and getting to them later
+
+Manual mode with wireless controller
+
+As many sensors, Indicators, Controllers sensing different things (MPU6050, Vibration Sensor, MQ-2, DHT11, Photoresistor, Sound Sensor, Reed Sensor, Fire Sensor, HC-SR501, Black Line Tracking Sensor, Heart rate sensor, Laser emitter, Passive Buzzer, SD Card Reader, RTC, Bluetooth Module, LEDS, 0.96 OLED, Hall Sensor... )
+
+After the requirements were set, it was time to start planning. First the hardware. Since I want to keep this robot relatively cheap (under 300 EUR), I decided that the best option for leg movement would be 3 Servos MG996R. One for rotation in the Y axis, and two in the X and Z axes. That is a total of 12 Servos for the robot. Next the Lidar, I am using the 360 Degrees 2D LiDAR LDS02RR. Since this is only a 2D Lidar, and I need to scan 3D space, I will also need a small servo to rotate the entire Lidar. For this I'm going to use the MG90S Micro servo, and a stitching software that will stitch the 2D lidar scans to a full 3D space scan. We also need a 6pin USB TTL UART converter for the Lidar to connect to the brain, about which we will talk in a second. Next is the brain of the entire robot. For the basic low level servo control and Inverse Kinematics, I decided to go with ESP32 S3 WROOM2. This Microcontroller is powerful enough to handle everything and even a little more. For the more advanced stuff like SLAM and Image recognition, I will use an older Intel NUC I have lying around. This NUC is equipped with 4GB DDR3 RAM, which isn't great, but it is around how much we need, so with a little optimization, I think we can do it. The 13 Servos in total can't be powered directly from the ESP32, so I also need a PCA9685 PWM Servo controller for powering the servos and controlling them from the ESP32 with I2C. The entire thing will be powered from a 20V Parkside battery for now, so I also need to buy a Step down converter from 20V down to maybe 6.4V at which the servos will operate. Next, we also need a step down converter for the Intel NUC, so I also bought an XL4015 Step Down Converter which should work for this. Power for the other sensors and ESP32 will be decided next time. Now to the software. The entire thing will be powered from NUC using Ubuntu and ROS2, the ESP32 will be programmed using C++ in VS Code. I will talk about the specific tools next time, when it is relevant.
+
+The next problem is the Weight. I calculated that each Leg can hold around 1.2kg. At one time there must be at least 2 Legs on the ground, so 2 * 1.2 = 2.4kg which is the weight I have to fit the robot in. For the legs, I will use a parallelogram to make the leg work more efficiently. I will talk about the leg structure and Inverse Kinematics calculations next time.
+
+I hope this project will push my skills further, and will hopefully get me to a good school where I plan to study engineering.
+
+Next time I will talk about the legs, degrees of freedom, dimensions, IK, CAD Modeling, and Final 3D Printing of the first prototype.
+
+See you next time!
             </p>
             <p style="margin-bottom: 15px;">
-              Ďalšie detaily, kód, prípadne obrázky môžeš hádzať priamo sem do tohto modalu.
+              <!-- tuto kod alebo obrazky sa davaju -->
             </p>
           </div>
         </div>
