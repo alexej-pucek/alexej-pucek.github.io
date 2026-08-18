@@ -872,10 +872,10 @@
               For a while now I have been thinking about this project. To me it is so cool to see robots move, particularly the quadrupeds. There are lots of DIY Quadruped Robots already online, but I want to make my own one completely from scratch, and with more advanced features. On most of the Quadrupeds, you have the 3D printed frame, some servos to move, and a distance sensor. This seems like a wasted opportunity, because this kind of robot can do so much more, so I wrote down all the things I want my robot to do.
             </p>
             <p style="margin-bottom: 15px;">
-              Lidar room mapping, remembering terrain, autonomous exploration<br>
-              Camera Detection, detection of things, remembering their location and getting to them later<br>
-              Manual mode with wireless controller<br>
-              As many sensors, Indicators, Controllers sensing different things (MPU6050, Vibration Sensor, MQ-2, DHT11, Photoresistor, Sound Sensor, Reed Sensor, Fire Sensor, HC-SR501, Black Line Tracking Sensor, Heart rate sensor, Laser emitter, Passive Buzzer, SD Card Reader, RTC, Bluetooth Module, LEDS, 0.96 OLED, Hall Sensor... )
+             1. Lidar room mapping, remembering terrain, autonomous exploration<br>
+             2. Camera Detection, detection of things, remembering their location and getting to them later<br>
+             3. Manual mode with wireless controller<br>
+             4. As many sensors, Indicators, Controllers sensing different things (MPU6050, Vibration Sensor, MQ-2, DHT11, Photoresistor, Sound Sensor, Reed Sensor, Fire Sensor, HC-SR501, Black Line Tracking Sensor, Heart rate sensor, Laser emitter, Passive Buzzer, SD Card Reader, RTC, Bluetooth Module, LEDS, 0.96 OLED, Hall Sensor... )
             </p>
             <p style="margin-bottom: 15px;">
               After the requirements were set, it was time to start planning. First the hardware. Since I want to keep this robot relatively cheap (under 300 EUR), I decided that the best option for leg movement would be 3 Servos MG996R. One for rotation in the Y axis, and two in the X and Z axes. That is a total of 12 Servos for the robot. Next the Lidar, I am using the 360 Degrees 2D LiDAR LDS02RR. Since this is only a 2D Lidar, and I need to scan 3D space, I will also need a small servo to rotate the entire Lidar. For this I'm going to use the MG90S Micro servo, and a stitching software that will stitch the 2D lidar scans to a full 3D space scan. We also need a 6pin USB TTL UART converter for the Lidar to connect to the brain.
